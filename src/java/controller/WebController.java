@@ -108,6 +108,7 @@ public class WebController extends HttpServlet {
                 hstr=historyFacade.find( Long.parseLong(strHistoryID) );
                 clndr=new GregorianCalendar();
                 hstr.setDateReturnBook( clndr.getTime() );
+                historyFacade.edit(hstr);
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
             break;
             default: throw new AssertionError();
